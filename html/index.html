@@ -3,20 +3,24 @@
   <head>
     <title>My First Page</title>
     <meta charset="UTF-8">
+    <link href="//fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
+    <link href="main.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <header>
       <h1>This is a really ugly page</h1>
+      <h1>Hello</h1>
     </header>
     <article>
-      <div>
+      <h3>Article Heading</h3>
+      <div class="content">
         <p>
           a <em>paragraph</em>
           <br>
           <span>line 2</span>
-          <hr>
           line 3
         </p>
+        <hr>
         <p>
           <strong>p2</strong>
         </p>
@@ -25,9 +29,14 @@
         <a href="http://google.com">Go to Google</a>
         some stuff
       </div>
-      <ul>
-        <li><a href="/test.html">Test Page</a></li>
-        <li><a href="/hobbies.html">Hobbies</a></li>
+      <ul class="main-list">
+        <li><a href="/test.html">Test Page</a> narf</li>
+        <li style="color: brown;">
+          <a href="/hobbies.html">Hobbies</a> foobar
+          <ul>
+            <li>sub ul</li>
+          </ul>
+        </li>
       </ul>
     </article>
     <footer>
