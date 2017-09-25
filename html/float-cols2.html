@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Float Col Layout</title>
+    <meta charset="UTF-8">
+    <style>
+      header {
+        background-color: red;
+        height: 40px;
+        display: block;
+      }
+      
+      footer {
+        background-color: blue;
+        height: 40px;
+        clear: both;
+      }
+      
+      .columns > div {
+        float: left;
+      }
+      
+      .col1 {
+        width: 300px;
+        background-color: grey;
+      }
+      
+      .col2 {
+        width: calc(100% - 300px);
+        min-width: 300px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <div class="columns">
+      <div class="col1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel pharetra vel turpis nunc eget lorem dolor sed viverra. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Elementum integer enim neque volutpat. Arcu ac tortor dignissim convallis aenean. Sit amet justo donec enim diam. Pharetra magna ac placerat vestibulum. Ipsum a arcu cursus vitae congue mauris rhoncus aenean. Pulvinar mattis nunc sed blandit libero volutpat sed cras ornare. Eu consequat ac felis donec et odio pellentesque diam volutpat. A diam sollicitudin tempor id eu nisl nunc. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat. In nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Adipiscing at in tellus integer. Mi bibendum neque egestas congue quisque egestas diam in arcu. Mattis pellentesque id nibh tortor id aliquet lectus.
+      </div>
+      <div class="col2">
+        hello
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+</html>
