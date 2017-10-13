@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <title>jQuery Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#the-button").click(function () {
+          $('h1').text('YAYAYAYAYAY!');
+          $(this).text('You clicked me');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>jQuery Example</h1>
+    <ul class="list">
+      <li>
+        <a href="https://google.com">Google</a>
+      </li>
+      <li>
+        <a href="https://www.digitalcrafts.com">
+          Digital Crafts
+        </a>
+      </li>
+    </ul>
+    <textarea>
+      
+    </textarea>
+    <button id="the-button">Click ME</button>
+    <div>
+      <form id="search-form">
+        <input id="search" name="search">
+        <input id="search2" name="search2">
+        <input type="submit" name="submit">
+      </form>
+    </div>
+    <script>
+      $('a').click(function (event) {
+        event.preventDefault();
+        $(this).text('You clicked me');
+      });
+      
+      $('textarea').keydown(function (event) {
+        console.log('Key Down:', event.keyCode);
+        
+        if (event.keyCode === 13) {
+          event.preventDefault();
+        }
+      });
+      
+      $('textarea').keyup(function (event) {
+        console.log('Key Up:', event.keyCode);
+        
+        if (event.keyCode === 13) {
+          event.preventDefault();
+        }
+      });
+      
+      $('form').submit(function (event) {
+        event.preventDefault();
+        var params = $(this).serialize();
+        console.log(params);
+      });
+    </script>
+  </body>
+</html>
