@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>jQuery Plugins</title>
+    <style>
+      img.thumb {
+        width: 64px;
+      }
+    </style>
+    <link href="lbox/css/lightbox.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>hello</h1>
+    <h2>Narf</h2>
+    <h2>barf</h2>
+    <a href="https://placekitten.com/400/700" data-lightbox="cat1">
+      <img class="thumb" src="https://placekitten.com/200/350" alt="">
+    </a>
+    <a href="https://placekitten.com/800/700" data-lightbox="cat2">
+      <img class="thumb" src="https://placekitten.com/400/350" alt="">
+    </a>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="lbox/js/lightbox.js"></script>
+    <script>
+      lightbox.option({
+        'resizeDuration': 1000,
+        'wrapAround': true
+      })
+    </script>
+    <script>
+      $.fn.hello = function () {
+        this.text('Hello World');
+      }
+      
+      $('h2').hello();
+    </script>
+  </body>
+</html>
