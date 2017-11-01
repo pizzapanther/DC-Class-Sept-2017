@@ -1,16 +1,13 @@
 {
-  "name": "test_project",
+  "name": "test_project_narf",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "marked": "^0.3.6",
-    "request": "^2.83.0",
     "sharp": "^0.18.4"
   },
-  "devDependencies": {
-    "sharp": "^0.18.4"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
