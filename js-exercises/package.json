@@ -1,0 +1,21 @@
+{
+  "name": "js-exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "axios-example.js",
+  "dependencies": {
+    "axios": "^0.17.0",
+    "bluebird": "^3.5.1",
+    "pg": "^7.3.0",
+    "pg-hstore": "^2.3.2",
+    "pg-promise": "^7.2.0",
+    "sequelize": "^4.22.1",
+    "sequelize-cli": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
