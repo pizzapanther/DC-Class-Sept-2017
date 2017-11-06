@@ -1,4 +1,7 @@
 var express = require('express');
+var morgan = require('morgan');
+var session = require('express-session');
+
 var app = express();
 var body_parser = require('body-parser');
 
@@ -8,14 +11,33 @@ var db = pgp({database: 'restaurant'});
 
 app.set('view engine', 'hbs');
 
+app.use(session({
+  secret: process.env.SECRET_KEY || 'dev',
+  resave: true,
+  saveUninitialized: false,
+  cookie: {maxAge: 60000}
+}));
 app.use('/static', express.static('public'));
 app.use(body_parser.urlencoded({extended: false}));
+
+app.use(morgan('dev'));
+
+app.use(function (request, response, next) {
+  if (request.session.user) {
+    next();
+  } else if (request.path == '/login') {
+    next();
+  } else {
+    response.redirect('/login');
+  }
+});
 
 app.get("/", function (request, response) {
   response.send('<html>');
 });
 
 app.get("/about", function (request, response) {
+  console.log(request.session.user);
   response.render('about.hbs', {title: 'About Us'});
 });
 
@@ -67,6 +89,22 @@ app.get('/search', function(req, resp, next) {
       });
     })
     .catch(next);
+});
+
+app.get('/login', function (request, response) {
+  response.render('login.hbs');
+});
+
+app.post('/login', function (request, response) {
+  var username = request.body.username;
+  var password = request.body.password;
+  if (username == 'aaron' && password == 'narf') {
+    request.session.user = username;
+    request.session.data = 'data';
+    response.redirect('/');
+  } else {
+    response.render('login.hbs');
+  }
 });
 
 app.listen(8000, function () {
