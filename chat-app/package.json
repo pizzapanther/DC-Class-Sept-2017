@@ -1,5 +1,5 @@
 {
-  "name": "express_example",
+  "name": "chat-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,13 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "crypto": "^1.0.1",
     "express": "^4.16.2",
-    "express-session": "^1.15.6",
     "hbs": "^4.0.1",
-    "morgan": "^1.9.0",
-    "nodemon": "^1.12.1",
-    "pbkdf2": "^3.0.14"
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
   }
 }
