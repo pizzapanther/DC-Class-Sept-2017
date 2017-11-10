@@ -1,6 +1,8 @@
 var express = require('express');
 var morgan = require('morgan');
 var session = require('express-session');
+var apicache = require('apicache');
+var cache = apicache.middleware;
 
 var app = express();
 var body_parser = require('body-parser');
@@ -25,7 +27,7 @@ app.use(morgan('dev'));
 app.use(function (request, response, next) {
   if (request.session.user) {
     next();
-  } else if (request.path == '/login') {
+  } else if (request.path == '/login' || request.path == '/api') {
     next();
   } else {
     response.redirect('/login');
@@ -105,6 +107,13 @@ app.post('/login', function (request, response) {
   } else {
     response.render('login.hbs');
   }
+});
+
+app.get('/api', cache('5 minutes'), function (request, response) {
+  console.log('Generating A Repsonse');
+  response.json(
+    {message: 'This is an API Chump!'}
+  );
 });
 
 app.listen(8000, function () {
