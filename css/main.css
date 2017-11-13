@@ -1,0 +1,25 @@
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+.text-centered {
+  text-align: center;
+}
+#header {
+  color: #b3c7dd;
+  padding: 20px;
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+  text-align: center;
+}
+#header a {
+  color: red;
+}
+#header a img {
+  width: 300px;
+}
+@media (max-width: 300px) {
+  #header a {
+    color: blue;
+  }
+}
