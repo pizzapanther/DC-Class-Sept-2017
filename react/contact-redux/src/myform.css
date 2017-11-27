@@ -1,0 +1,7 @@
+.md-card {
+  margin: 20px;
+}
+
+.md-card .divider {
+  margin: 20px 0 !important;
+}
