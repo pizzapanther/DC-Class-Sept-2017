@@ -9,14 +9,16 @@ function contacts (state = [], action) {
   switch (action.type) {
     case 'ADD_CONTACT':
       // 1. Copy the sate
-      let new_state = Object.assign({}, state, {contacts: []});
-      state.contacts.forEach((old, index) => {
-        let new_contact = Object.assign({}, old);
-        new_state.contacts.push(new_contact);
-      });
+      // let new_state = Object.assign({}, state, {contacts: []});
+      // state.contacts.forEach((old, index) => {
+      //   let new_contact = Object.assign({}, old);
+      //   new_state.contacts.push(new_contact);
+      // });
+      
+      var new_state = [...state];
       
       // 2. Modify new state
-      new_state.contacts.push(action.data);
+      new_state.push(action.data);
       
       // 3. return new state
       return new_state;
@@ -28,10 +30,9 @@ function contacts (state = [], action) {
       //   new_state.contacts.push(new_contact);
       // });
       
-      var new_state = Object.assign(
-          {}, state, {contact: [...state.contacts]});
+      var new_state = [...state];
       
-      new_state.contacts[action.index][action.key] = action.value;
+      new_state[action.index][action.key] = action.value;
       
       console.log(new_state);
       return new_state;
