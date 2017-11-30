@@ -1,0 +1,11 @@
+
+# Added by djzen
+django-dotenv==1.4.1
+django-uwsgi==0.2.1
+django==1.11.7
+djzen==17.7.1
+pip-save==0.2.0
+uwsgi==2.0.15
+whitenoise==3.3.1
+# End djzen
+
