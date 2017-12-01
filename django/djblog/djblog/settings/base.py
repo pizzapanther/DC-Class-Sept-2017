@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'djzen',
     'django_uwsgi',
+    'rest_framework',
     
     'blog',
 ]

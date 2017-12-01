@@ -17,6 +17,11 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from djzen.urls import zen_url
 
+import blog.views
+
 urlpatterns = [
+    zen_url('posts/<slug>', blog.views.post_list),
     zen_url('admin/', admin.site.urls),
+    zen_url('api-auth/', include(
+                  'rest_framework.urls', namespace='rest_framework')),
 ]
