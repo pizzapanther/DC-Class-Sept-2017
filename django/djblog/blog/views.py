@@ -14,3 +14,13 @@ def post_list (request, slug):
   return Response(serializer.data)
   
 # def post_detail (request, id):
+
+@api_view(['POST'])
+@permission_classes((IsAuthenticated, ))
+def add_post (request):
+  serializer = PostSerializer(data=request.data)
+  
+  if serializer.is_valid(raise_exception=True):
+    serializer.save()
+    return Response(serializer.data)
+    

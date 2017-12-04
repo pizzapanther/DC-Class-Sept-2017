@@ -1,8 +1,10 @@
 django==1.11.7
 django-dotenv==1.4.1
 django-filter==1.1.0
+django-jwt-auth==0.0.2
 django-uwsgi==0.2.1
 djangorestframework==3.7.3
+djangorestframework-jwt==1.11.0
 djzen==17.7.1
 graphene==2.0.1
 markdown==2.6.9
