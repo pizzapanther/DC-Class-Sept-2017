@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'djzen',
     'django_uwsgi',
     'rest_framework',
+    'graphene_django',
     
     'blog',
 ]
@@ -131,3 +132,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
 
 # Uncomment if using Heroku
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+GRAPHENE = {
+  'SCHEMA': 'blog.schema.schema'
+}

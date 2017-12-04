@@ -17,10 +17,19 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from djzen.urls import zen_url
 
+from graphene_django.views import GraphQLView
+from django.views.decorators.csrf import csrf_exempt
+
 import blog.views
 
 urlpatterns = [
     zen_url('posts/<slug>', blog.views.post_list),
+    
+    zen_url('graphql', csrf_exempt(
+        GraphQLView.as_view(graphiql=True)
+      )
+    ),
+    
     zen_url('admin/', admin.site.urls),
     zen_url('api-auth/', include(
                   'rest_framework.urls', namespace='rest_framework')),

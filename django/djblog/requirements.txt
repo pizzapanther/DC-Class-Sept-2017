@@ -4,7 +4,9 @@ django-filter==1.1.0
 django-uwsgi==0.2.1
 djangorestframework==3.7.3
 djzen==17.7.1
+graphene==2.0.1
 markdown==2.6.9
 pip-save==0.2.0
 uwsgi==2.0.15
 whitenoise==3.3.1
+-e git+git://github.com/pizzapanther/graphene-django.git#egg=graphene-django
