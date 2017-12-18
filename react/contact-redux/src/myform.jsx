@@ -13,12 +13,12 @@ import './myform.css';
 import {addContact, updateAttr} from './actions.js';
 import { connect } from 'react-redux';
 
-class MyFormComponent extends Component {
+export class MyFormComponent extends Component {
   constructor(props) {
     super(props);
     this.index = null;
     
-    if (props.match.params.index) {
+    if (props.match && props.match.params.index) {
       this.index = props.match.params.index;
       this.state = Object.assign({}, props.contacts[this.index]);
     } else {
